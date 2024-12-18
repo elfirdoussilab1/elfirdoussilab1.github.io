@@ -81,9 +81,9 @@ analytics:
 # Site Author
 author:
   name             : "aymane.elfirdoussi"
-  avatar           : "profile.jpg"
+  avatar           : "home_picture.webp"
   bio              : "Student at MVA."
-  location         : "Paris, France."
+  location         : "Paris, France"
   employer         :
   pubmed           :
   googlescholar    :
