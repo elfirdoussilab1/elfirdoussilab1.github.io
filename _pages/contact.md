@@ -13,6 +13,10 @@ redirect_from:
   method="POST"
 >
   <label>
+    Your name:
+    <input type="text" name="name">
+  </label>
+  <label>
     Your email:
     <input type="email" name="_replyto">
   </label>
