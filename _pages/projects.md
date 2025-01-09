@@ -1,9 +1,10 @@
 ---
 layout: archive
-title: "Projects"
+#title: "Projects"
 permalink: /projects/
 author_profile: true
 ---
+# Research projects:
 
 ## Stein Variational Gradient Descent
 
@@ -22,17 +23,44 @@ SVGD employs a "kernelized" version of the **Wasserstein Gradient Descent** algo
 - 📄 [Final Article](../files/SVGD_Final_report.pdf) *(Proposal of new algorithms improving SVGD)*
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/SVGD)
 
-## Composed Image Retrieval:
-<div style="display: flex; align-items: center;">
+## Composed Image Retrieval
 
-<div style="flex: 1; padding: 10px;">
-<p>
-- 
-</p>
-</div>
+<img src="../images/coir.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
-<div style="flex: 1; padding: 10px; text-align: center;">
-<img src="../images/coir.png" alt="Your image description" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
-</div>
+Composed Image Retrieval (CoIR) has recently gained much attention by the computer vision community. It involves retrieving images based on a complex multi-type query comprised of a reference image and a text modification of this latter. CoIR is inherently challenging as it requires using advanced techniques to learn and integrate both visual and textual information. Many models have been created to solve this task, among which we find [BLIP](https://arxiv.org/pdf/2201.12086) and [BLIP-2](https://arxiv.org/pdf/2301.12597) models.
 
-</div>
+In this project, I investigated on the impact of the different embeddings produced by the BLIP model, which are the *query embedding* **q**, the *modification text* **t** and the *multimodal embedding* **f(q, t)**.
+
+### Resources:
+- 📄 [Presentation](../files/RecVis_MVA_Presentation.pdf)
+- 📄 [Project report]() *(coming soon)*
+- 💻 [Code Repository]()*(coming soon)*
+
+# Software engineering projects:
+
+## Garden Connection Kit: Pact'AG
+<img src="../images/pactag.jpg" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+
+During our first year at Télécom Paris, we created as a team of 6 members, a kit to connect a garden.
+
+If you want to start growing your own fruits and vegetables, or any plant that you want, then you can use our product (this is just the purpose of the project, but we are not selling it actually !). 
+
+The kit is comprised of a box that contains micro-controller that controls the actuators like lamps and pumps, and get the values of the different sensors like temperature, humidity and luminosity.
+
+To manipulate the garden, like activating the pumps or just getting the temperature of the garden, we developed an android application that communicates with the micro-controller using a server. This server modifies a database and send the client’s orders to the micro-controller to execute them. 
+
+### Resources:
+- 📄 [Poster](../files/pactag_poster.pdf)
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/PACTAG)
+
+## Stereogame
+<img src="../images/stereogame.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+
+As a team of 4, we created a game using OpenGL and the Python library pygame, which we called stereogame.
+
+It is a two players game that looks like tennis but where you use a bat instead of a racket. And there are some special effects like explosive balls, or cloning the ball into 3, or teleportation, etc.
+
+And what makes this game special is that it is suited for a 3D TV, and both players look at the same TV but from different angles, and when you change the angle you can see the camera of the other player. So using this technique, we can add as many players as we want in the game, and they will all see their own camera in full screen using on single TV. Hence, we don’t need to split our screen to sub-screens !
+
+### Resources:
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/PACTAG)
