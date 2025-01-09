@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 ## Stein Variational Gradient Descent
----
+----
 
 <img src="../images/svgd.gif" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
@@ -24,7 +24,7 @@ SVGD employs a "kernelized" version of the **Wasserstein Gradient Descent** algo
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/SVGD)
 
 ## Composed Image Retrieval
----
+----
 
 <img src="../images/coir.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
@@ -42,7 +42,7 @@ In this project, I investigated on the impact of the different embeddings produc
 # Software engineering projects:
 
 ## Garden Connection Kit: Pact'AG
----
+----
 
 <img src="../images/pactag.jpg" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
@@ -59,7 +59,7 @@ To manipulate the garden, like activating the pumps or just getting the temperat
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/PACTAG)
 
 ## Stereogame
--
+----
 
 <img src="../images/stereogame.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
