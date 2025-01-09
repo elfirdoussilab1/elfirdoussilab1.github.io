@@ -5,7 +5,8 @@ permalink: /projects/
 author_profile: true
 ---
 
-- ## Stein Variational Gradient Descent
+## Stein Variational Gradient Descent
+---
 
 <img src="../images/svgd.gif" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
@@ -22,7 +23,8 @@ SVGD employs a "kernelized" version of the **Wasserstein Gradient Descent** algo
 - 📄 [Final Article](../files/SVGD_Final_report.pdf) *(Proposal of new algorithms improving SVGD)*
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/SVGD)
 
-- ## Composed Image Retrieval
+## Composed Image Retrieval
+---
 
 <img src="../images/coir.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
@@ -39,7 +41,9 @@ In this project, I investigated on the impact of the different embeddings produc
 
 # Software engineering projects:
 
-- ## Garden Connection Kit: Pact'AG
+## Garden Connection Kit: Pact'AG
+---
+
 <img src="../images/pactag.jpg" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
 During our first year at Télécom Paris, we created as a team of 6 members, a kit to connect a garden.
@@ -54,7 +58,9 @@ To manipulate the garden, like activating the pumps or just getting the temperat
 - 📄 [Poster](../files/pactag_poster.pdf)
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/PACTAG)
 
-- ## Stereogame
+## Stereogame
+-
+
 <img src="../images/stereogame.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
 As a team of 4, we created a game using OpenGL and the Python library pygame, which we called stereogame.
