@@ -5,6 +5,28 @@ permalink: /projects/
 author_profile: true
 ---
 
+## On the impact of Synthetic data on Model performance
+----
+
+<img src="../images/real_synth_mnist.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+
+Worked under the supervision of Prof. **Pascal Bianchi** in the [LTCI](https://www.telecom-paris.fr/fr/recherche/labos/traitement-information-ltci) lab at Télécom Paris on developing the theoretical part of the **Stein Variational Gradient Descent (SVGD)**, a recently discovered algorithm (since 2016) used for sampling from a wide variety of probability distributions. Unlike traditional methods, SVGD does not require restrictive conditions on the distribution to sample from.
+
+This algorithm can be used in a wide variety of Machine Learning tasks such as **Reinforcement learning** and **Bayesian Machine Learning**. Additionally, sampling from a distribution is crucial in simulations across multiple domains:
+- **Biology**: Simulating disease propagation in a population.
+- **Finance**: Applying Monte Carlo methods for integral approximations.
+
+SVGD employs a "kernelized" version of the **Wasserstein Gradient Descent** algorithm. More information about this can be found in my **state-of-the-art review** and **project report**.
+
+### Resources:
+- 📄 [Paper](../files/Maximizing_the_Potential_of_Synthetic_Data.pdf.pdf)
+- 💻 [Code Repository]() *(coming soon)*
+
+![img](../images/synth_data_plot.jpg)
+
+## High-dimensional Learning with Noisy Labels
+To be filled later..
+
 ## Stein Variational Gradient Descent
 ----
 
@@ -34,8 +56,8 @@ In this project, I investigated on the impact of the different embeddings produc
 
 ### Resources:
 - 📄 [Presentation](../files/RecVis_MVA_Presentation.pdf)
-- 📄 [Project report]() *(coming soon)*
-- 💻 [Code Repository]()*(coming soon)*
+- 📄 [Project report](../files/recvis_report.pdf)
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/RecVis-project)
 
 ----
 
