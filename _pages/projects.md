@@ -17,13 +17,21 @@ While current theoretical studies primarily focus on label noise in synthetic da
 At the [Technology Innovation Institute](https://www.tii.ae/), together with **Dr. Mohamed El Amine Seddik**, we address this gap by proposing a statistical model that accounts for both distribution shifts in the feature space and label noise. In our model, we induce distribution shifts in the feature space by supposing that the statistics of synthetic data are empirical estimates of the underlying real data statistics. Our theoretical results are derived using **Random Matrix Theory.**
 
 ### Resources:
-- 📄 [Paper](../files/Maximizing_the_Potential_of_Synthetic_Data.pdf.pdf)
+- 📄 [Paper](../files/Maximizing_the_Potential_of_Synthetic_Data.pdf)
 - 💻 [Code Repository]() *(coming soon)*
 
 ![img](../images/synth_data_plot.jpg)
 
 ## High-dimensional Learning with Noisy Labels
-To be filled later..
+----
+<img src="../images/noisy_labels.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+
+Machine learning methods are usually built upon low-dimensional intuitions which do not necessarily hold when processing high-dimensional data. Numerous studies have demonstrated the effects of the curse of dimensionality, by showing that high dimensions can alter the internal functioning of various ML methods designed with low-dimensional intuitions.
+This project provides theoretical insights into high-dimensional binary classification with class-conditional noisy labels. Specifically, relying on **Random Matrix Theory**, we study the behavior of a linear classifier with a label noisiness aware loss function, when both the dimension of data p and the sample size n are large and comparable. Importantly, our findings show that the low-dimensional intuitions to handle label noise **do not hold** in high-dimension, in the sense that the optimal classifier in low-dimension dramatically fails in high-dimension. Based on our derivations, we design an optimized method that is shown to be provably more efficient in handling noisy labels in high dimensions.
+
+### Resources:
+- 📄 [Paper](../files/High_dimensional_Learning_with_Noisy_Labels.pdf)
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/High-Dimensional-Learning-Noisy-Labels)
 
 ## Stein Variational Gradient Descent
 ----
