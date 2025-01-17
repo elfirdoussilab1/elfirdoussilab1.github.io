@@ -98,4 +98,4 @@ It is a two players game that looks like tennis but where you use a bat instead 
 And what makes this game special is that it is suited for a 3D TV, and both players look at the same TV but from different angles, and when you change the angle you can see the camera of the other player. So using this technique, we can add as many players as we want in the game, and they will all see their own camera in full screen using on single TV. Hence, we don’t need to split our screen to sub-screens !
 
 ### Resources:
-- 💻 [Code Repository](https://github.com/elfirdoussilab1/PACTAG)
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/stereogame)
