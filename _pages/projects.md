@@ -44,8 +44,7 @@ This algorithm can be used in a wide variety of Machine Learning tasks such as *
 - **Biology**: Simulating disease propagation in a population.
 - **Finance**: Applying Monte Carlo methods for integral approximations.
 
-SVGD employs a "kernelized" version of the **Wasserstein Gradient Descent** algorithm. More information about this can be found in my **state-of-the-art review** and **project report**.
-
+In this project, I studied the convergence properties of SVGD, as well as porposed novel algorithms that enhance its performance. For instance, I proposed a **stochastic** version of SVGD (which I called **Stochastic SVGD**), as well as a mixture of SVGD and the well-known **Langevin** algorithm. My work is summarized in the two following reports: **state-of-the-art** and **final report.** 
 ### Resources:
 - 📄 [State of the Art](../files/SVGD_State_of_the_Art.pdf)
 - 📄 [Final Article](../files/SVGD_Final_report.pdf) *(Proposal of new algorithms improving SVGD)*
