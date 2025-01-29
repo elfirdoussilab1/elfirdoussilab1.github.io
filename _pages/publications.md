@@ -7,7 +7,7 @@ author_profile: true
 
 2025
 ---
-> Aymane El Firdoussi, Mohamed El Amine Seddik, Soufiane Hayou, Reda Alami, Ahmed Alzubaidi, Hakim Hacid, **"Maximizing the Potential of Synthetic data: Insights from Random Matrix Theory"**, *Published at **ICLR 2025*** [[preprint](https://elfirdoussilab1.github.io/files/Maximizing_the_Potential_of_Synthetic_Data.pdf)] 
+> Aymane El Firdoussi, Mohamed El Amine Seddik, Soufiane Hayou, Reda Alami, Ahmed Alzubaidi, Hakim Hacid, **"Maximizing the Potential of Synthetic data: Insights from Random Matrix Theory"**, *Published at **ICLR 2025*** [[preprint](https://elfirdoussilab1.github.io/files/Maximizing_the_Potential_of_Synthetic_Data.pdf)] *(Code repo coming soon)
 
 2024
 ---
