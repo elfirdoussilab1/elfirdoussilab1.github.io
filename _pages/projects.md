@@ -17,7 +17,7 @@ While current theoretical studies primarily focus on label noise in synthetic da
 At the [Technology Innovation Institute](https://www.tii.ae/), together with **Dr. Mohamed El Amine Seddik**, we address this gap by proposing a statistical model that accounts for both distribution shifts in the feature space and label noise. In our model, we induce distribution shifts in the feature space by supposing that the statistics of synthetic data are empirical estimates of the underlying real data statistics. Our theoretical results are derived using **Random Matrix Theory.**
 
 ### Resources:
-- 📄 [Paper](../files/Maximizing_the_Potential_of_Synthetic_Data.pdf)
+- 📄 [Paper](../files/ICLR_2025_Final_paper.pdf)
 - 💻 [Code Repository]() *(coming soon)*
 
 ![img](../images/synth_data_plot.jpg)
@@ -32,6 +32,20 @@ This project provides theoretical insights into high-dimensional binary classifi
 ### Resources:
 - 📄 [Paper](../files/High_dimensional_Learning_with_Noisy_Labels.pdf)
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/High-Dimensional-Learning-Noisy-Labels)
+
+## Composed Image Retrieval
+----
+
+<img src="../images/coir.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+
+Composed Image Retrieval (CoIR) has recently gained much attention by the computer vision community. It involves retrieving images based on a complex multi-type query comprised of a reference image and a text modification of this latter. CoIR is inherently challenging as it requires using advanced techniques to learn and integrate both visual and textual information. Many models have been created to solve this task, among which we find [BLIP](https://arxiv.org/pdf/2201.12086) and [BLIP-2](https://arxiv.org/pdf/2301.12597) models.
+
+In this project, I investigated on the impact of the different embeddings produced by the BLIP model, which are the *query embedding* **q**, the *modification text* **t** and the *multimodal embedding* **f(q, t)**.
+
+### Resources:
+- 📄 [Presentation](../files/RecVis_MVA_Presentation.pdf)
+- 📄 [Project report](../files/recvis_report.pdf)
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/RecVis-project)
 
 ## Stein Variational Gradient Descent
 ----
@@ -49,20 +63,6 @@ In this project, I studied the convergence properties of SVGD, as well as porpos
 - 📄 [State of the Art](../files/SVGD_State_of_the_Art.pdf)
 - 📄 [Final Article](../files/SVGD_Final_report.pdf) *(Proposal of new algorithms improving SVGD)*
 - 💻 [Code Repository](https://github.com/elfirdoussilab1/SVGD)
-
-## Composed Image Retrieval
-----
-
-<img src="../images/coir.png" alt="CoIR" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
-
-Composed Image Retrieval (CoIR) has recently gained much attention by the computer vision community. It involves retrieving images based on a complex multi-type query comprised of a reference image and a text modification of this latter. CoIR is inherently challenging as it requires using advanced techniques to learn and integrate both visual and textual information. Many models have been created to solve this task, among which we find [BLIP](https://arxiv.org/pdf/2201.12086) and [BLIP-2](https://arxiv.org/pdf/2301.12597) models.
-
-In this project, I investigated on the impact of the different embeddings produced by the BLIP model, which are the *query embedding* **q**, the *modification text* **t** and the *multimodal embedding* **f(q, t)**.
-
-### Resources:
-- 📄 [Presentation](../files/RecVis_MVA_Presentation.pdf)
-- 📄 [Project report](../files/recvis_report.pdf)
-- 💻 [Code Repository](https://github.com/elfirdoussilab1/RecVis-project)
 
 ----
 
