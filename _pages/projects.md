@@ -18,7 +18,7 @@ At the [Technology Innovation Institute](https://www.tii.ae/), together with **D
 
 ### Resources:
 - 📄 [Paper](../files/ICLR_2025_Final_paper.pdf)
-- 💻 [Code Repository]() *(coming soon)*
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/Synthetic-data)
 
 ![img](../images/synth_data_plot.jpg)
 
