@@ -9,7 +9,7 @@ redirect_from:
 
 <!-- modify this form HTML and place wherever you want your form -->
 <form
-  action="https://formspree.io/f/mbjwjyqq"
+  action="https://formspree.io/f/mldgpojw"
   method="POST"
 >
   <label>
