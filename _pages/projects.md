@@ -5,7 +5,7 @@ permalink: /projects/
 author_profile: true
 ---
 
-## On the impact of Synthetic data on Model performance
+## On the impact of Synthetic data on Model's performance
 ----
 
 <img src="../images/real_synth_mnist.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
@@ -22,11 +22,24 @@ At the [Technology Innovation Institute](https://www.tii.ae/), together with **D
 
 ![img](../images/synth_data_plot.jpg)
 
+## Privacy preserving Decentralized Learning
+----
+
+<img src="../images/real_synth_mnist.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+
+In numerous machine learning scenarios, the training dataset is dispersed among diverse sources, including individual users or distinct organizations responsible for generating each data segment. The nature of such data often involves privacy concerns, especially in applications like healthcare (Sheller et al., 2020), which can divulge sensitive information about an individual’s health. Privacy issues make it either impractical or undesirable to transfer the data beyond their original sources, promoting the emergence of **federated** and **decentralized** learning, where the training occurs directly on the data-holding entities. Decentralized learning additionally removes the assumption of a **central server**, with only the model updates being transmitted directly between users.
+
+Decentralized learning is appealing as it enables the scalable usage of large amounts of distributed data and resources (without resorting to any central entity), while promoting privacy since every user minimizes the direct exposure of their data. Yet, without additional precautions, curious users can still leverage models obtained from their peers to violate privacy. In this paper, we propose **DECOR**, a variant of decentralized SGD with **differential privacy** (DP) guarantees. In DECOR, users securely exchange randomness seeds in one communication round to generate pairwise-canceling correlated Gaussian noises, which are injected to protect local models at every communication round. We theoretically and empirically show that, for arbitrary connected graphs, DECOR matches the central DP optimal privacy-utility trade-off.
+
+### Resources:
+- 📄 [Paper](https://arxiv.org/pdf/2405.01031)
+- 💻 [Code Repository](https://github.com/elfirdoussilab1/DECOR)
+
 ## High-dimensional Learning with Noisy Labels
 ----
 <img src="../images/noisy_labels.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
-Machine learning methods are usually built upon low-dimensional intuitions which do not necessarily hold when processing high-dimensional data. Numerous studies have demonstrated the effects of the curse of dimensionality, by showing that high dimensions can alter the internal functioning of various ML methods designed with low-dimensional intuitions.
+Machine learning algorithms are usually built upon low-dimensional intuitions which do not necessarily hold when processing high-dimensional data. Numerous studies have demonstrated the effects of the curse of dimensionality, by showing that high dimensions can alter the internal functioning of various ML methods designed with low-dimensional intuitions.
 This project provides theoretical insights into high-dimensional binary classification with class-conditional noisy labels. Specifically, relying on **Random Matrix Theory**, we study the behavior of a linear classifier with a label noisiness aware loss function, when both the dimension of data p and the sample size n are large and comparable. Importantly, our findings show that the low-dimensional intuitions to handle label noise **do not hold** in high-dimension, in the sense that the optimal classifier in low-dimension dramatically fails in high-dimension. Based on our derivations, we design an optimized method that is shown to be provably more efficient in handling noisy labels in high dimensions.
 
 ### Resources:
