@@ -25,7 +25,7 @@ At the [Technology Innovation Institute](https://www.tii.ae/), together with **D
 ## Privacy preserving Decentralized Learning
 ----
 
-<img src="../images/real_synth_mnist.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+<img src="../images/dsgd.png" alt="SVGD Visualization" style="float: right; margin: 10px; width: 40%; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
 
 In numerous machine learning scenarios, the training dataset is dispersed among diverse sources, including individual users or distinct organizations responsible for generating each data segment. The nature of such data often involves privacy concerns, especially in applications like healthcare, which can divulge sensitive information about an individual’s health. Privacy issues make it either impractical or undesirable to transfer the data beyond their original sources, promoting the emergence of **federated** and **decentralized** learning, where the training occurs directly on the data-holding entities. Decentralized learning additionally removes the assumption of a **central server**, with only the model updates being transmitted directly between users.
 
