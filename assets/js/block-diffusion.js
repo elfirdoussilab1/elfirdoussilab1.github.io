@@ -75,13 +75,13 @@
 
   /* One block per paragraph (each top-level element of the container). */
   var blocks = [];
-  var lastParent = null;
+  var paragraphs = [];
   tokens.forEach(function (tok) {
     var parent = tok;
     while (parent.parentNode !== root) parent = parent.parentNode;
-    if (parent !== lastParent) {
+    if (parent !== paragraphs[paragraphs.length - 1]) {
       blocks.push([]);
-      lastParent = parent;
+      paragraphs.push(parent);
     }
     blocks[blocks.length - 1].push(tok);
   });
@@ -130,11 +130,28 @@
     later(function () { tok.classList.remove("is-fresh"); }, FRESH_MS);
   }
 
+  /* [MASK] tokens and words differ in width, so lines reflow while decoding.
+     Each paragraph is held at its taller height (masked or decoded) so the
+     rest of the page does not jump. */
+  function lockHeights() {
+    paragraphs.forEach(function (p) { p.style.minHeight = ""; });
+    tokens.forEach(function (tok) { tok.classList.remove("is-masked"); });
+    var decoded = paragraphs.map(function (p) { return p.offsetHeight; });
+    tokens.forEach(function (tok) { tok.classList.add("is-masked"); });
+    paragraphs.forEach(function (p, i) {
+      p.style.minHeight = Math.max(decoded[i], p.offsetHeight) + "px";
+    });
+  }
+
+  function unlockHeights() {
+    paragraphs.forEach(function (p) { p.style.minHeight = ""; });
+  }
+
   function maskAll() {
     tokens.forEach(function (tok) {
       tok.classList.remove("is-active", "is-fresh");
-      tok.classList.add("is-masked");
     });
+    lockHeights();
     links.forEach(function (link) { link.el.classList.remove("is-decoded"); });
     root.classList.add("is-diffusing");
   }
@@ -182,6 +199,7 @@
 
     later(function () {
       root.classList.remove("is-diffusing");
+      unlockHeights();
       setStatus(tokens.length + " tokens · " + blocks.length + " paragraphs");
     }, t + FRESH_MS);
   }

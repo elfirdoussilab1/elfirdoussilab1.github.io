@@ -331,26 +331,42 @@ a { color: var(--blue-700); }
 
 @keyframes diffuse-failsafe { to { visibility: visible; } }
 
-.tok {
-  border-radius: 4px;
-  transition: color .45s ease, background-color .45s ease;
-}
+.tok { transition: color .45s ease; }
 
-/* A masked token: the word keeps its width so the layout never moves */
-.tok.is-masked {
-  color: transparent;
+/* A masked token: the word is hidden and a [MASK] token is shown instead */
+.tok.is-masked { font-size: 0; }
+
+.tok.is-masked::before {
+  content: "[MASK]";
+  display: inline-block;
+  margin: 0 1px;
+  padding: 0 .4em;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: .02em;
+  vertical-align: 1px;
+  color: var(--blue-600);
   background-color: var(--mask);
-  box-shadow: -1px 0 0 var(--mask), 1px 0 0 var(--mask);
+  border-radius: 4px;
+  transition: background-color .3s ease, color .3s ease;
 }
 
-/* Tokens in the block currently being denoised */
-.tok.is-masked.is-active {
+/* Tokens in the paragraph currently being denoised */
+.tok.is-masked.is-active::before {
+  color: var(--blue-900);
   background-color: var(--mask-active);
-  box-shadow: -1px 0 0 var(--mask-active), 1px 0 0 var(--mask-active);
 }
 
-/* A token that was just unmasked flashes blue, then settles */
-.tok.is-fresh { color: var(--blue-600); }
+/* A token that was just unmasked fades in blue, then settles */
+.tok.is-fresh {
+  color: var(--blue-600);
+  animation: tok-in .35s ease;
+}
+
+@keyframes tok-in { from { opacity: 0; } }
 
 /* Hide link underlines until the whole link is decoded */
 .is-diffusing a:not(.is-decoded) { text-decoration-color: transparent; }
