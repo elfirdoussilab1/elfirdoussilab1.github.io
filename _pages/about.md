@@ -48,4 +48,4 @@ I completed the [MVA](https://www.master-mva.com) master's program (Mathématiqu
 
 I am usually open to collaborations on the topics listed below. Feel free to reach out via email if you want to work together on exciting projects.
 
-Check my [Google Scholar profile](https://scholar.google.com/citations?user=Noq0ExIAAAAJ&hl=en&oi=ao) for a list of updated publications.
+Check my [Google Scholar profile](https://scholar.google.com/citations?user=Noq0ExIAAAAJ&hl=en&oi=ao) for an updated list of my publications.

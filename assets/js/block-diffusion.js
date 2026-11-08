@@ -1,10 +1,11 @@
 /*
- * Block-diffusion text decoding.
+ * Block-diffusion text decoding, one paragraph per block.
  *
- * The text inside [data-diffuse] is split into word tokens. Every token starts
- * masked; blocks of BLOCK_SIZE tokens are then decoded left to right
- * (semi-autoregressively), and inside a block the tokens are unmasked in a
- * random order over STEPS denoising steps, as in masked / block diffusion
+ * The text inside [data-diffuse] is split into word tokens, and every token
+ * starts masked. Paragraphs are decoded one after the other, from the first to
+ * the last. Inside a paragraph, tokens are unmasked in a random order (not left
+ * to right) over several denoising steps, following a cosine schedule: few
+ * tokens are revealed at first, then more and more, as in masked diffusion
  * language models.
  *
  * Without JavaScript, or with reduced motion requested, the text is shown as is.
@@ -12,11 +13,12 @@
 (function () {
   "use strict";
 
-  var BLOCK_SIZE = 16;   // tokens per block
-  var STEPS = 4;         // denoising steps per block
-  var STEP_MS = 75;      // delay between denoising steps
-  var BLOCK_GAP_MS = 45; // pause between blocks
-  var FRESH_MS = 650;    // how long a newly decoded token stays highlighted
+  var TOKENS_PER_STEP = 4;  // sets the number of steps: ~ paragraph length / 4
+  var MIN_STEPS = 6;        // denoising steps for the shortest paragraphs
+  var MAX_STEPS = 14;       // denoising steps for the longest paragraphs
+  var STEP_MS = 140;        // delay between denoising steps
+  var BLOCK_GAP_MS = 350;   // pause between paragraphs
+  var FRESH_MS = 900;       // how long a newly decoded token stays highlighted
 
   var root = document.querySelector("[data-diffuse]");
   if (!root) return;
@@ -71,10 +73,18 @@
     return { el: a, toks: Array.prototype.slice.call(a.querySelectorAll(".tok")) };
   });
 
+  /* One block per paragraph (each top-level element of the container). */
   var blocks = [];
-  for (var i = 0; i < tokens.length; i += BLOCK_SIZE) {
-    blocks.push(tokens.slice(i, i + BLOCK_SIZE));
-  }
+  var lastParent = null;
+  tokens.forEach(function (tok) {
+    var parent = tok;
+    while (parent.parentNode !== root) parent = parent.parentNode;
+    if (parent !== lastParent) {
+      blocks.push([]);
+      lastParent = parent;
+    }
+    blocks[blocks.length - 1].push(tok);
+  });
 
   /* 2. Scheduling helpers. */
   var timers = [];
@@ -129,30 +139,41 @@
     root.classList.add("is-diffusing");
   }
 
-  /* 3. Decode block by block; random unmasking order within each block. */
+  function stepsFor(block) {
+    var n = Math.ceil(block.length / TOKENS_PER_STEP);
+    return Math.max(MIN_STEPS, Math.min(MAX_STEPS, n));
+  }
+
+  /* Cosine masking schedule: number of tokens still masked after step s of S. */
+  function maskedAfter(s, S, n) {
+    return Math.floor(n * Math.cos((Math.PI / 2) * (s / S)));
+  }
+
+  /* 3. Decode paragraph by paragraph; random unmasking order inside each. */
   function run() {
     clearTimers();
     maskAll();
 
-    var t = 200;
+    var t = 250;
     blocks.forEach(function (block, b) {
+      var steps = stepsFor(block);
+      var label = "paragraph " + (b + 1) + "/" + blocks.length;
+
       later(function () {
         block.forEach(function (tok) { tok.classList.add("is-active"); });
-        setStatus("block " + (b + 1) + "/" + blocks.length + " · step 0/" + STEPS);
+        setStatus(label + " · step 0/" + steps);
       }, t);
 
       var order = shuffle(block.slice());
-      for (var s = 0; s < STEPS; s++) {
-        var chunk = order.slice(
-          Math.floor((s * order.length) / STEPS),
-          Math.floor(((s + 1) * order.length) / STEPS)
-        );
+      var n = order.length;
+      for (var s = 1; s <= steps; s++) {
+        var chunk = order.slice(n - maskedAfter(s - 1, steps, n), n - maskedAfter(s, steps, n));
         t += STEP_MS;
         later((function (chunk, s) {
           return function () {
             chunk.forEach(reveal);
             updateLinks();
-            setStatus("block " + (b + 1) + "/" + blocks.length + " · step " + (s + 1) + "/" + STEPS);
+            setStatus(label + " · step " + s + "/" + steps);
           };
         })(chunk, s), t);
       }
@@ -161,14 +182,14 @@
 
     later(function () {
       root.classList.remove("is-diffusing");
-      setStatus(tokens.length + " tokens · " + blocks.length + " blocks × " + STEPS + " steps");
+      setStatus(tokens.length + " tokens · " + blocks.length + " paragraphs");
     }, t + FRESH_MS);
   }
 
   /* 4. Show the masked text right away; start decoding once it is on screen. */
   maskAll();
   root.classList.add("is-ready");
-  setStatus("block 0/" + blocks.length);
+  setStatus("paragraph 0/" + blocks.length);
   if (controls) controls.hidden = false;
   if (replayBtn) replayBtn.addEventListener("click", run);
 
