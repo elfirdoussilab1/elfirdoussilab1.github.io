@@ -1,0 +1,129 @@
+<!doctype html>
+{%- assign author = site.author -%}
+{%- if author.googlescholar and author.googlescholar != "" -%}
+  {%- assign scholar_url = author.googlescholar -%}
+{%- else -%}
+  {%- assign scholar_url = "https://scholar.google.com/scholar?q=%22Aymane+El+Firdoussi%22" -%}
+{%- endif -%}
+<html lang="{{ site.locale | slice: 0,2 | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/' | append: author.avatar | absolute_url }}">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+  <script>
+    if (!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+      document.documentElement.classList.add("js-diffuse");
+    }
+  </script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="topbar__name" href="#top">{{ author.name }}</a>
+      <nav class="topbar__nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <img class="hero__photo" src="{{ '/images/' | append: author.avatar | relative_url }}" alt="Portrait of {{ author.name }}" width="168" height="168">
+        <div class="hero__text">
+          <h1 class="hero__name">{{ author.name }}</h1>
+          {%- if page.tagline %}<p class="hero__tagline">{{ page.tagline }}</p>{% endif %}
+          {%- if author.location %}<p class="hero__location">{{ author.location }}</p>{% endif %}
+          <ul class="links" aria-label="Profiles and contact">
+            {%- if author.linkedin %}
+            <li><a class="link" href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="me noopener" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn</a></li>
+            {%- endif %}
+            <li><a class="link" href="{{ scholar_url }}" rel="me noopener" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+              Google Scholar</a></li>
+            {%- if author.github %}
+            <li><a class="link" href="https://github.com/{{ author.github }}" rel="me noopener" target="_blank">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub</a></li>
+            {%- endif %}
+            {%- if author.email %}
+            <li><a class="link" href="mailto:{{ author.email }}">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              Email</a></li>
+            {%- endif %}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title" id="about-title">About</h2>
+          <div class="decoder" data-diffuse-controls hidden>
+            <span class="decoder__status" data-diffuse-status aria-hidden="true"></span>
+            <button class="decoder__replay" type="button" data-diffuse-replay aria-label="Replay the block-diffusion animation">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+              Replay
+            </button>
+          </div>
+        </div>
+        <div class="about prose" data-diffuse>
+          {{ content }}
+        </div>
+      </div>
+    </section>
+
+    {%- if page.research_interests %}
+    <section class="section section--tint" id="research" aria-labelledby="research-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title" id="research-title">Research interests</h2>
+        </div>
+        <ol class="cards">
+          {%- for item in page.research_interests %}
+          <li class="card">
+            <span class="card__rank" aria-hidden="true">{{ forloop.index }}</span>
+            <div class="card__body">
+              <h3 class="card__title">{{ item.title }}</h3>
+              {%- if item.description %}
+              <p class="card__desc">{{ item.description }}</p>
+              {%- endif %}
+            </div>
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </section>
+    {%- endif %}
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ author.name }}</span>
+      <span>Last updated {{ site.time | date: "%B %Y" }}</span>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/block-diffusion.js' | relative_url }}" defer></script>
+</body>
+</html>

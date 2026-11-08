@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Aymane El Firdoussi"
 title_separator          : "-"
 name                     : &name "Aymane El Firdoussi"
-description              : &description "Welcome to my personal webpage! I'm a Master student at ENS Paris-Saclay, specifically enrolled in the MVA program."
+description              : &description "Aymane El Firdoussi, PhD Researcher."
 url                      : https://elfirdoussilab1.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "elfirdoussilab1/elfirdoussilab1.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Aymane El Firdoussi"
   avatar           : "home_picture.webp"
-  bio              : "Student at MVA."
-  location         : "Paris, France"
+  bio              : "Research Scientist."
+  location         : "Cambridge, United Kingdom"
   employer         :
   pubmed           :
-  googlescholar    :
-  email            : "aymane.elfirdoussi@telecom-paris.fr"
+  googlescholar    : # full profile URL, e.g. "https://scholar.google.com/citations?user=XXXXXXXXXXXX"
+  email            : "ae606@cam.ac.uk"
   researchgate     : 
   uri              :
   bitbucket        :
