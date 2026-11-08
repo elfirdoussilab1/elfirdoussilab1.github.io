@@ -118,41 +118,71 @@ a { color: var(--blue-700); }
   position: relative;
   display: flex;
   align-items: center;
-  gap: 44px;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  gap: 28px;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 
-.hero__photo {
+/* Monogram: the LaTeX letter \mathcal{A} in a circle, from KaTeX's Computer Modern fonts.
+   For \mathbb{A} instead, change the font-family below to "KaTeX_AMS". */
+@font-face {
+  font-family: "KaTeX_Caligraphic";
+  src: url("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_Caligraphic-Regular.woff2") format("woff2");
+  font-display: block;
+}
+
+@font-face {
+  font-family: "KaTeX_AMS";
+  src: url("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/fonts/KaTeX_AMS-Regular.woff2") format("woff2");
+  font-display: block;
+}
+
+.hero__mark {
   flex: none;
+  display: grid;
+  place-items: center;
   width: 168px;
   height: 168px;
   border-radius: 50%;
-  object-fit: cover;
+  background: radial-gradient(circle at 30% 25%, var(--white) 0%, var(--blue-50) 100%);
   border: 4px solid var(--white);
   box-shadow: 0 0 0 1px var(--blue-200), 0 12px 32px -12px rgba(15, 42, 92, .35);
-  background: var(--blue-100);
+  user-select: none;
+}
+
+.hero__glyph {
+  /* Optical centring of the slanted calligraphic letter */
+  transform: translate(-2%, -3%);
+  padding: 0 .08em;
+  font-family: "KaTeX_Caligraphic", var(--serif);
+  font-weight: 400;
+  font-size: 118px;
+  line-height: 1;
+  background: linear-gradient(160deg, var(--blue-900) 15%, var(--blue-600) 85%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 
 .hero__name {
   margin: 0;
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(2rem, 4.6vw, 2.9rem);
+  font-size: clamp(1.7rem, 3.6vw, 2.2rem);
   line-height: 1.1;
   letter-spacing: -.01em;
   color: var(--blue-900);
 }
 
 .hero__tagline {
-  margin: 10px 0 0;
-  font-size: 1.1rem;
+  margin: 6px 0 0;
+  font-size: 1rem;
   color: var(--ink-soft);
 }
 
 .hero__location {
-  margin: 2px 0 0;
-  font-size: .95rem;
+  margin: 0;
+  font-size: .9rem;
   color: var(--ink-faint);
 }
 
@@ -160,17 +190,17 @@ a { color: var(--blue-700); }
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 24px 0 0;
+  gap: 8px;
+  margin: 14px 0 0;
   padding: 0;
 }
 
 .link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  font-size: .9rem;
+  gap: 7px;
+  padding: 5px 12px;
+  font-size: .85rem;
   font-weight: 500;
   color: var(--blue-700);
   background: var(--white);
@@ -181,8 +211,8 @@ a { color: var(--blue-700); }
 }
 
 .link svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -517,16 +547,21 @@ a { color: var(--blue-700); }
   .wrap { padding: 0 16px; }
   .topbar__nav a { padding: 6px 8px; font-size: .85rem; }
   .hero__inner {
-    flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
-    padding-top: 48px;
-    padding-bottom: 48px;
+    gap: 14px;
+    padding-top: 26px;
+    padding-bottom: 26px;
   }
-  .hero__photo { width: 128px; height: 128px; }
+  .hero__mark { width: 84px; height: 84px; border-width: 3px; }
+  .hero__glyph { font-size: 58px; }
   .section { padding: 52px 0; }
   .card { gap: 14px; padding: 14px 16px 14px 16px; }
   .card__title { font-size: 1.05rem; }
+}
+
+@media (max-width: 480px) {
+  .topbar__name { display: none; }
+  .topbar__inner { justify-content: flex-end; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -13,7 +13,6 @@ scholar_search_url : "https://scholar.google.com/citations?user=Noq0ExIAAAAJ&hl=
 
 author:
   name           : "Aymane El Firdoussi"
-  avatar         : "home_picture.webp"   # in /images/
   location       : "Cambridge, United Kingdom"
   email          : "ae606@cam.ac.uk"
   googlescholar  :                       # full profile URL, e.g. "https://scholar.google.com/citations?user=XXXXXXXXXXXX"

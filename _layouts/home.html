@@ -11,7 +11,7 @@
   <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | strip }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/images/' | append: author.avatar | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/apple-touch-icon.png' | absolute_url }}">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" sizes="48x48">
@@ -46,7 +46,7 @@
 
     <section class="hero">
       <div class="wrap hero__inner">
-        <img class="hero__photo" src="{{ '/images/' | append: author.avatar | relative_url }}" alt="Portrait of {{ author.name }}" width="168" height="168">
+        <span class="hero__mark" aria-hidden="true"><span class="hero__glyph">A</span></span>
         <div class="hero__text">
           <h1 class="hero__name">{{ author.name }}</h1>
           {%- if page.tagline %}<p class="hero__tagline">{{ page.tagline }}</p>{% endif %}
