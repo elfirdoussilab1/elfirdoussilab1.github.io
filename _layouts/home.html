@@ -1,10 +1,6 @@
 <!doctype html>
 {%- assign author = site.author -%}
-{%- if author.googlescholar and author.googlescholar != "" -%}
-  {%- assign scholar_url = author.googlescholar -%}
-{%- else -%}
-  {%- assign scholar_url = "https://scholar.google.com/scholar?q=%22Aymane+El+Firdoussi%22" -%}
-{%- endif -%}
+{%- assign scholar_url = author.googlescholar | default: site.scholar_search_url -%}
 <html lang="{{ site.locale | slice: 0,2 | default: 'en' }}">
 <head>
   <meta charset="utf-8">
@@ -18,7 +14,9 @@
   <meta property="og:image" content="{{ '/images/' | append: author.avatar | absolute_url }}">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+  <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" sizes="48x48">
+  <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
@@ -37,6 +35,9 @@
       <nav class="topbar__nav" aria-label="Sections">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        {%- if page.software %}
+        <a href="#software">Software</a>
+        {%- endif %}
       </nav>
     </div>
   </header>
@@ -111,6 +112,36 @@
           </li>
           {%- endfor %}
         </ol>
+      </div>
+    </section>
+    {%- endif %}
+
+    {%- if page.software %}
+    <section class="section" id="software" aria-labelledby="software-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="section__title" id="software-title">Software</h2>
+        </div>
+        <ul class="tools">
+          {%- for tool in page.software %}
+          <li class="tool">
+            <h3 class="tool__name">{{ tool.name }}</h3>
+            <p class="tool__desc">{{ tool.description }}</p>
+            <div class="tool__links">
+              {%- if tool.repo %}
+              <a class="tool__link" href="{{ tool.repo }}" rel="noopener" target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                Code</a>
+              {%- endif %}
+              {%- if tool.demo %}
+              <a class="tool__link" href="{{ tool.demo }}" rel="noopener" target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Live demo</a>
+              {%- endif %}
+            </div>
+          </li>
+          {%- endfor %}
+        </ul>
       </div>
     </section>
     {%- endif %}
