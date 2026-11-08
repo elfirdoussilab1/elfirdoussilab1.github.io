@@ -16,7 +16,7 @@
   var TOKENS_PER_STEP = 4;  // sets the number of steps: ~ paragraph length / 4
   var MIN_STEPS = 6;        // denoising steps for the shortest paragraphs
   var MAX_STEPS = 14;       // denoising steps for the longest paragraphs
-  var STEP_MS = 140;        // delay between denoising steps
+  var STEP_MS = 50;        // delay between denoising steps
   var BLOCK_GAP_MS = 350;   // pause between paragraphs
   var FRESH_MS = 900;       // how long a newly decoded token stays highlighted
 

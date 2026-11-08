@@ -20,16 +20,13 @@ research_interests:
     description: "Masked and uniform-state diffusion on finite state spaces, diffusion language models, and semi-autoregressive block decoding."
 
   - title: "Reinforcement Learning for Generative Models"
-    description: "Steering diffusion models towards rewards with policy-gradient fine-tuning, guidance and reward tilting."
+    description: "Post-training LLMs and Diffusion Models with RL, Preference Optimization."
 
   - title: "Continuous Diffusion Modeling & Neural Sampling"
-    description: "Sampling Unnormalised Densities with Diffusion Samplers, Stochastic Optimal Control."
-   
-  - title: "Large Language Models"
-    description: "Post-training with RL, Efficient Fine-Tuning (LoRA)."
+    description: "Sampling unnormalised densities with Diffusion Samplers, Stochastic Optimal Control."
 
-  - title: "High-Dimensional Statistics & Random Matrix Theory"
-    description: "Exact asymptotics of learning when dimension and sample size grow together: synthetic data, model collapse and noisy labels."
+  - title: "High-Dimensional Statistics"
+    description: "Random Matrix Theory for Machine Learning, Exact asymptotics of learning when dimension and sample size row together."
 
 # Software: each entry becomes one box in the Software section.
 software:
