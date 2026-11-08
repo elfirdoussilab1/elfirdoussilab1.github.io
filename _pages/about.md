@@ -31,7 +31,7 @@ research_interests:
 # Software: each entry becomes one box in the Software section.
 software:
   - name: "Scientific Reading"
-    description: "A local app to keep track of the papers I read. Papers are organised by topic, and each one gets a TL;DR, a summary and notes written in LaTeX, edited side by side with the PDF."
+    description: "A local app to keep track of the papers read. Papers are organised by topic, and each one gets a TL;DR, a summary and notes written in LaTeX, edited side by side with the PDF."
     repo: "https://github.com/elfirdoussilab1/Scientific-Reading"
 
   - name: "Chatbot with API"

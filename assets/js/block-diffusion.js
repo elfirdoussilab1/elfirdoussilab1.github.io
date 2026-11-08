@@ -19,6 +19,7 @@
   var STEP_MS = 50;        // delay between denoising steps
   var BLOCK_GAP_MS = 350;   // pause between paragraphs
   var FRESH_MS = 900;       // how long a newly decoded token stays highlighted
+  var START_DELAY_MS = 1000; // how long the fully masked text is shown before decoding
 
   var root = document.querySelector("[data-diffuse]");
   if (!root) return;
@@ -171,7 +172,7 @@
     clearTimers();
     maskAll();
 
-    var t = 250;
+    var t = START_DELAY_MS;
     blocks.forEach(function (block, b) {
       var steps = stepsFor(block);
       var label = "paragraph " + (b + 1) + "/" + blocks.length;
